@@ -1,0 +1,28 @@
+<ion-view view-title="Help me shovel my driveway for memes ddd" class="">
+    <ion-content data-tap-disabled="true">
+
+        <a class="button button-assertive button-block icon-left ion-log-out" ng-click="showRequest(1)">ok</a>
+    </ion-content>
+</ion-view>
+
+<!-- REQUEST -->
+<script id="requestModal.html" type="text/ng-template">
+    <div class="modal item-stable" ng-controller="requestModalCtrl">
+        <ion-header-bar class="bar bar-header bar-energized">
+            <span class="left-buttons">
+                <button ripple ripple-dark class="button button-clear button-icon ion-android-arrow-back" ng-click="hideModal()"><i class="icon"></i></button>
+            </span>
+            <h1 class="title">Settings</h1>
+        </ion-header-bar>
+        <ion-content padding="false" scroll="false">
+            <ui-gmap-google-map options='{mapTypeControl: false, minZoom: 7, streetViewControl: false}' center='map.center' zoom='15'></ui-gmap-google-map>
+            <div class="list padding">
+                <ion-item class="item item-avatar" href="#">
+                    <img src="venkman.jpg">
+                    <h2>Help me load my things</h2>
+                    <p>Tobi Adewoye</p>
+                </ion-item>
+            </div>
+        </ion-content>
+    </div>
+</script>

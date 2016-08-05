@@ -1,0 +1,116 @@
+
+.bar-header.expanded {
+    top: 6px;
+    min-height:182px;
+    position:absolute;
+}
+
+
+
+.has-expanded-header {
+    top:182px !important;
+}
+
+.bar-header.expanded .item.avatar {
+    padding: 0;
+    position:absolute;
+    margin: 0;
+    top: 28px;
+    left: 50%;
+    margin-left:-38px;
+    height:76px;
+    width:76px;
+    border-radius:100%;
+    border-width: 2px;
+    border-color: #fff;
+}
+
+.bar-header.expanded .headerText {
+    margin: 0;
+    left: 0 !important;
+    width:100%;
+    text-align:center;
+    font-size: 1.2em;
+    display: block;
+    height: auto;
+    line-height:1.2em;
+    top: 122px;
+}
+
+.bar-header.expanded .headerText span {
+    font-weight: 300;
+    font-size: 0.85em;
+    color: rgba(255,255,255,0.6);
+}
+
+.menu .buttons {
+    top:0;
+    height: 100%;
+    width: 100%;
+}
+
+.menu .buttons .button {
+    position: absolute;
+    top:50px;
+    width: 36px;
+    height: 36px;
+    padding: 2px!important;
+    border-radius: 100px;
+}
+
+.menu .buttons .button-settings {
+    left: 100%;
+    margin-left: -72px;
+}
+
+.menu .buttons .button-user {
+    left: 0;
+    margin-left: 36px;
+}
+
+.item.expanded::after {
+    content:'';
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    width: 75%;
+    background-color: transparent;
+    height: 1px;
+}
+
+.item.menu-selected::after {
+    content:'';
+    position: absolute;
+    top: 26px;
+    left: -6px;
+    width: 12px;
+    background-color: #fff;
+    height: 12px;
+    border-radius: 12px;
+    animation: fadeIn 0.5s;
+}
+
+.menu .item-content {
+    padding: 6px;
+    padding-left: 32px!important;
+}
+
+.menu .item .button {
+    font-weight:300 !important;
+    text-transform: capitalize;
+}
+
+.bar-header .left-buttons {
+    padding: 4px!important;
+}
+
+.bar-header .left-buttons .button {
+    height: 48px;
+    max-height: none;
+    min-height: 0;
+    min-width: 0;
+    width: 48px;
+    border-radius:100%;
+}

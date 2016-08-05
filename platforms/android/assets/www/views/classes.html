@@ -1,0 +1,22 @@
+<ion-view view-title="My classes" class="bg bg-poly">
+    <ion-content>
+        <div class="list list-inset">
+            <label class="item item-input">
+                <i class="icon ion-search placeholder-icon"></i>
+                <input type="text" placeholder="Search" ng-model="filter">
+            </label>
+        </div>
+
+        <div class="item item-icon-left">
+            <i class="menu-icon icon ion-university"></i>
+            <div class="row no-margin no-padding">
+                <div class="col no-padding no-margin">
+                    {{location}}
+                    <br>
+                    <h3 class="dark">{{class.code}}&nbsp;&nbsp;<i class="ion-grid"></i>&nbsp;&nbsp;{{class.room}}</h3>
+                </div>
+                <a class="button button-small button-clear button-energized no-margin text-large" style="padding:0.4em" ng-click="classModal(class)">EDIT</a>
+            </div>
+        </div>
+    </ion-content>
+</ion-view>

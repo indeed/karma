@@ -1,0 +1,86 @@
+<ion-side-menus enable-menu-with-back-views="true">
+
+    <ion-side-menu-content>
+        <ion-nav-bar class="bar-energized">
+            <ion-nav-back-button>
+            </ion-nav-back-button>
+            <ion-nav-buttons side="left">
+                <button ripple class="button button-settings button-clear icon ion-android-menu" menu-toggle="left"></button>
+            </ion-nav-buttons>
+        </ion-nav-bar>
+        <ion-nav-view name="menuContent">
+            <!-- MAIN CONTENT -->
+        </ion-nav-view>
+    </ion-side-menu-content>
+
+    <!-- SIDE MENU -->
+    <ion-side-menu side="left" class="bg">
+
+        <ion-header-bar class="expanded bar bar-header bg bar-calm">
+            <div class="buttons">
+                <button ripple ripple-dark class="button button-settings button-stable icon ion-android-settings" ng-click="settingsModal.show()"></button>
+                <ion-item class="item-image avatar"><img src="{{$storage.user.profileImageURL}}"></ion-item>
+                <button ripple ripple-dark class="button button-user button-stable icon ion-android-notifications" ng-click="authModal.show()">
+                    <span class="badge badge-assertive">3</span>
+                </button>
+            </div>
+            <span class="headerText title light">
+                {{$storage.user.displayName}}
+                </br>
+                <span><i class="icon ion-android-pin"></i>&nbsp;&nbsp;Ottawa, Canada</span>
+            </span>
+        </ion-header-bar>
+
+        <ion-content class="has-expanded-header" scroll="false">
+            <ion-list>
+                <ion-item ng-repeat="view in views" class="borderless item-calm item-icon-left" ng-class="{'menu-selected': isViewSelected(view.name)}"
+                    menu-close href="#/app/{{view.ref}}">
+                    <button ripple class="button icon-left button-clear {{view.icon}}" ng-class="{'button-energized': isViewSelected(view.name), 'button-light': !isViewSelected(view.name)}">
+                        <i class="icon menu-icon" ng-class="''"></i>
+                        &nbsp;&nbsp;{{view.name}}
+                    </button>
+                </ion-item>
+            </ion-list>
+        </ion-content>
+
+    </ion-side-menu>
+</ion-side-menus>
+
+<!-- SETTINGS -->
+<script id="settingsModal.html" type="text/ng-template">
+    <div class="modal" ng-controller="settingsModalCtrl">
+        <ion-header-bar class="bar bar-header bar-energized">
+            <span class="left-buttons">
+                <button ripple ripple-dark class="button button-clear button-icon ion-android-arrow-back" ng-click="hideModal()"><i class="icon"></i></button>
+            </span>
+            <h1 class="title">Settings</h1>
+        </ion-header-bar>
+        <ion-content padding="true" scroll="false"> 
+            <div class="list padding">
+                <a ripple class="button button-energized button-block icon-left ion-android-calendar" ng-click="clearCalendar()">Clear calendar cache</a>
+                <a ripple class="button button-assertive button-block icon-left ion-log-out" ng-click="logout()">Log out</a>
+            </div>
+        </ion-content>
+    </div>
+</script>
+
+<!-- LOGIN -->
+<script id="authModal.html" type="text/ng-template">
+    <div class="modal bg bg-poly" ng-controller="authModalCtrl">
+        <ion-header-bar class="bar bar-header bar-calm">
+            <span class="left-buttons no-margin">
+                <button class="button light button-icon ion-log-in"></button>
+            </span>
+            <h1 class="title no-margin">Karma <span class="text-light">Login</span></h1>
+        </ion-header-bar>
+        <ion-content padding="true" scroll="false">
+            <div class="item item-calm item-image" style="padding: 32px 128px 32px 128px">
+                <img src="../img/logo.png">
+            </div>
+            <div class="list padding">
+                <a ripple class="button button-assertive button-block icon-left ion-social-google" ng-click="auth('google')">Sign in with <b>Google</b></a>
+                <a ripple class="button button-positive button-block icon-left ion-social-facebook" ng-click="auth('facebook')">Sign in with <b>Facebook</b></a>
+            </div>
+        </ion-content>
+    </div>
+</script>

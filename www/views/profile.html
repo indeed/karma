@@ -1,0 +1,72 @@
+<ion-view hide-back-button="true" view-title="" nav-bar-class="bar-calm" ng-style="{'background-color': 'rgb('+dominantColor[0]+', '+dominantColor[1]+', '+dominantColor[2]+')'}"
+    class="bg bg-poly-translucent">
+    <ion-list class="profile-header">
+        <ion-item class="item-image profile">
+            <img id="profileImage" crossorigin="Anonymous" ng-src="{{profile.auth.profileImageURL}}" imageonload="setColor(profile.auth.profileImageURL)">
+        </ion-item>
+        <h1 class="item item-calm">
+            {{profile.auth.displayName}}
+            <span class="item item-calm text-med"><i class="icon ion-android-star"></i> 342 Karma</span>
+        </h1>
+    </ion-list>
+
+    <ion-tabs class="profile-tabs tabs-striped tabs-top tabs-background-stable tabs-color-energized">
+
+        <ion-tab class="bg bg-dark" icon="ion-android-person">
+            <!-- Tab 1 content -->
+        </ion-tab>
+
+        <ion-tab ripple ripple-dark icon="ion-android-pin">
+            <ion-content>
+                Tab 1 content
+                <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br> Tab
+                1 content
+                <br> Tab 1 content
+                <br> Tab 1 content
+                <br> Tab 1 content
+                <br> Tab 1 content
+                <br> Tab 1 content
+                <br> Tab 1 content
+                <br>
+            </ion-content>
+        </ion-tab>
+
+        <ion-tab icon="ion-android-walk">
+            <ion-content class="item item-stable no-top" overflow-scroll="true">
+                Tab 1 content
+                <br> Tab 1 content
+                <br> Tab 1 content
+                <br> Tab 1 content
+                <br> Tab 1 content
+                <br> Tab 1 content
+                <br> Tab 1 content
+                <br> Tab 1 content
+                <br> <br> Tab 1 content
+                <br> <br> Tab 1 content
+                <br> <br> Tab 1 content
+                <br> <br> Tab 1 content
+                <br> <br> Tab 1 content
+                <br> <br> Tab 1 content
+                <br> <br> Tab 1 content
+                <br> <br> Tab 1 content
+                <br> <br> Tab 1 content
+                <br> <br> Tab 1 content
+                <br> <br> Tab 1 content
+                <br> <br> Tab 1 content
+                <br> <br> Tab 1 content
+                <br> <br> Tab 1 content
+                <br> <br> Tab 1 content
+                <br> <br> Tab 1 content
+                <br> <br> Tab 1 content
+                <br> <br> Tab 1 content
+                <br> <br> Tab 1 content
+                <br> <br> Tab 1 content
+                <br> <br> Tab 1 contentend
+                <br>
+                </ion-scroll>
+
+        </ion-tab>
+
+    </ion-tabs>
+
+</ion-view>

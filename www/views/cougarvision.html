@@ -1,0 +1,44 @@
+<ion-view view-title="CougarVision" hide-back-button="true" class="bg bg-poly">
+    <ion-content>
+
+        <div class="list card no-padding">
+            <div class="button-bar">
+                <a class="button button-dark button-clear">CV This Week</a>
+                <a class="button button-dark button-clear icon-right ion-android-arrow-dropdown" ng-click="filterModal()">{{filter.selected.name}}</a>
+            </div>
+        </div>
+
+        <div class="no-padding" ng-repeat="episode in episodes | filter:filter.selected.filter track by episode.date">
+            <div class="list card no-padding no-margin-bottom">
+                <div class="item light no-padding bg" ng-class="episode.bg">
+                    <div class="fill" style="background-color: rgba(0,0,0,0.4)">
+                        <span class="text-large text-light"><i class="icon ion-videocamera"></i>&nbsp;&nbsp;{{episode.day}} Show</span>
+                        <span class="item-note stable text-light stable">
+                            <!--<i class="icon ion-android-time"></i>&nbsp;&nbsp;{{episode.date}}-->
+                        </span>
+                    </div>
+                </div>
+                <a class="item padding-small" ng-click="playVideo(episode.ref)">
+                    <span class="dark"><i class="icon ion-play"></i>&nbsp;&nbsp;Watch</span>
+                </a>
+            </div>
+        </div>
+    </ion-content>
+
+</ion-view>
+
+<script id="cvFilterModal.html" type="text/ng-template">
+    <div class="modal" ng-controller="filterModalCtrl">
+        <ion-header-bar class="bar bar-header bar-positive">
+            <h1 class="title">Filter by Day</h1>
+            <button class="button button-clear button-primary" ng-click="hideModal()">Cancel</button>
+        </ion-header-bar>
+        <ion-content>
+            <div class="list">
+                <ion-radio ng-value="day" ng-model="filter.selected" ng-repeat="day in filterDays" ng-click="hideModalAction(day)">
+                    <i class="icon ion-android-calendar"></i>&nbsp;&nbsp;{{day.name}}
+                </ion-radio>
+            </div>
+        </ion-content>
+    </div>
+</script>
